@@ -9,6 +9,9 @@ set encoding=utf-8
 " Turn on syntax highlighting
 syntax on
 
+" Filetype detection, using filetype plugin files, using indent files
+filetype plugin indent on
+
 " Last line's indent
 set autoindent
 " Indent more after certain structures
@@ -37,9 +40,6 @@ set incsearch
 " Break at nice places
 set linebreak
 
-" Filetype detection, using filetype plugin files, using indent files
-filetype plugin indent on
-
 " Grep command
 set grepprg=grep\ -nH\ $*
 
@@ -48,6 +48,9 @@ let g:tex_flavor = "latex"
 
 " Always show the statusline
 set laststatus=2
+
+" Indent guides
+let g:indent_guides_enable_on_vim_startup = 1
 
 " Powerline
 let g:Powerline_symbols = 'fancy'
