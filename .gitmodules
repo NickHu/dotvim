@@ -14,3 +14,11 @@
 	path = bundle/vim-indent-guides
 	url = git://github.com/nathanaelkane/vim-indent-guides.git
 	ignore = dirty
+[submodule "bundle/viki_vim"]
+	path = bundle/viki_vim
+	url = git://github.com/tomtom/viki_vim.git
+	ignore = dirty
+[submodule "bundle/tlib_vim"]
+	path = bundle/tlib_vim
+	url = git://github.com/tomtom/tlib_vim.git
+	ignore = dirty
