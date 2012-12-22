@@ -68,6 +68,13 @@ let g:Powerline_colorscheme = 'solarized256'
 
 " Viki
 let g:vikiOpenUrlWith_ANY = "exec 'silent !xdg-open '. shellescape('%{URL}')"
+let g:vikiNameTypes= 'sSeuixwf'
+
+" MiniBufExplorer
+let g:miniBufExplMapWindowNavVim = 1 
+let g:miniBufExplMapWindowNavArrows = 1 
+let g:miniBufExplMapCTabSwitchBufs = 1 
+let g:miniBufExplModSelTarget = 1 
 
 " Solarized Dark
 set background=dark
