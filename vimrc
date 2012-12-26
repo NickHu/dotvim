@@ -1,10 +1,10 @@
-" Load vim.pathogen
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-call pathogen#infect()
-
 " Vim, not vi
 set nocompatible
 set encoding=utf-8
+
+" Load vim.pathogen
+runtime bundle/vim-pathogen/autoload/pathogen.vim
+call pathogen#infect()
 
 " Turn on syntax highlighting
 syntax on
@@ -69,6 +69,7 @@ let g:Powerline_colorscheme = 'solarized256'
 " Viki
 let g:vikiOpenUrlWith_ANY = "exec 'silent !xdg-open '. shellescape('%{URL}')"
 let g:vikiNameTypes= 'sSeuixwf'
+map <Leader>tt :VikiTasks<CR>
 
 " MiniBufExplorer
 let g:miniBufExplMapWindowNavVim = 1 
