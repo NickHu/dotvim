@@ -5,6 +5,7 @@ set encoding=utf-8
 " Load vim.pathogen
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
+call pathogen#helptags()
 
 " Turn on syntax highlighting
 syntax on
