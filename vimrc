@@ -1,17 +1,10 @@
-" Vim, not vi
-set nocompatible
+" Use unicode
 set encoding=utf-8
 
-" Load vim.pathogen
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-call pathogen#infect()
-call pathogen#helptags()
+source bundles.vim
 
 " Turn on syntax highlighting
 syntax on
-
-" Filetype detection, using filetype plugin files, using indent files
-filetype plugin indent on
 
 " Last line's indent
 set autoindent

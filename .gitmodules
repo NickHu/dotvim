@@ -1,32 +1,3 @@
-[submodule "bundle/vim-pathogen"]
-	path = bundle/vim-pathogen
-	url = http://github.com/tpope/vim-pathogen.git
-	ignore = dirty
-[submodule "bundle/vim-powerline"]
-	path = bundle/vim-powerline
-	url = git://github.com/Lokaltog/vim-powerline.git
-	ignore = dirty
-[submodule "bundle/vim-colors-solarized"]
-	path = bundle/vim-colors-solarized
-	url = git://github.com/altercation/vim-colors-solarized
-	ignore = dirty
-[submodule "bundle/vim-indent-guides"]
-	path = bundle/vim-indent-guides
-	url = git://github.com/nathanaelkane/vim-indent-guides.git
-	ignore = dirty
-[submodule "bundle/viki_vim"]
-	path = bundle/viki_vim
-	url = git://github.com/tomtom/viki_vim.git
-	ignore = dirty
-[submodule "bundle/tlib_vim"]
-	path = bundle/tlib_vim
-	url = git://github.com/tomtom/tlib_vim.git
-	ignore = dirty
-[submodule "bundle/vikitasks_vim"]
-	path = bundle/vikitasks_vim
-	url = git://github.com/tomtom/vikitasks_vim.git
-	ignore = dirty
-[submodule "bundle/trag_vim"]
-	path = bundle/trag_vim
-	url = git://github.com/tomtom/trag_vim.git
-	ignore = dirty
+[submodule "/home/nick/.vim/bundle/vundle"]
+	path = /home/nick/.vim/bundle/vundle
+	url = http://github.com/gmarik/vundle.git
