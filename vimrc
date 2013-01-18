@@ -1,7 +1,7 @@
 " Use unicode
 set encoding=utf-8
-
-source bundles.vim
+set rtp=$HOME/.vim,$VIMRUNTIME,$HOME/.vim/after
+source ~/.vim/bundles.vim
 
 " Turn on syntax highlighting
 syntax on
@@ -67,7 +67,7 @@ let g:Powerline_colorscheme = 'solarized256'
 " Viki
 let g:vikiOpenUrlWith_ANY = "exec 'silent !xdg-open '. shellescape('%{URL}')"
 let g:vikiNameTypes= 'sSeuixwf'
-map <Leader>tt :VikiTasks<CR>
+" map <Leader>tt :VikiTasks<CR>
 
 " MiniBufExplorer
 let g:miniBufExplMapWindowNavVim = 1 
