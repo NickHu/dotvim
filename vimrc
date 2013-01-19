@@ -16,6 +16,7 @@ set smartindent
 set expandtab
 set shiftwidth=2
 set softtabstop=2
+set tabstop=2
 
 " Enable opening new buffers without needing to save existing changes
 set hidden
