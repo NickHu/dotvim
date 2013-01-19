@@ -56,6 +56,12 @@ set spell! spelllang=en_gb
 " Always show mode
 set showmode showcmd
 
+" Shortcut to rapidly toggle `set list`
+nmap <leader>l :set list!<CR>
+ 
+" Use the same symbols as TextMate for tabstops and EOLs
+set listchars=tab:▸\ ,eol:¬
+
 " Indent guides
 let g:indent_guides_enable_on_vim_startup = 1
 
