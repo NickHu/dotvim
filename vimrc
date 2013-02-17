@@ -37,6 +37,7 @@ set incsearch
 "set nowrap
 " Break at nice places
 set linebreak
+set showbreak=…
 
 " Grep command
 set grepprg=grep\ -nH\ $*
