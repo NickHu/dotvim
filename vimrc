@@ -57,6 +57,9 @@ set spell! spelllang=en_gb
 " Always show mode
 set showmode showcmd
 
+" Fold markers by default
+set foldmethod=marker
+
 " Indent guides
 let g:indent_guides_enable_on_vim_startup = 1
 
