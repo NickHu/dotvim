@@ -16,6 +16,7 @@ set smartindent
 set expandtab
 set shiftwidth=2
 set softtabstop=2
+set tabstop=2
 
 " Enable opening new buffers without needing to save existing changes
 set hidden
@@ -59,6 +60,12 @@ set showmode showcmd
 
 " Fold markers by default
 set foldmethod=marker
+"
+" Shortcut to rapidly toggle `set list`
+nmap <leader>l :set list!<CR>
+ 
+" Use the same symbols as TextMate for tabstops and EOLs
+set listchars=tab:▸\ ,eol:¬
 
 " Indent guides
 let g:indent_guides_enable_on_vim_startup = 1
