@@ -11,6 +11,7 @@ Bundle 'gmarik/vundle'
 " My bundles
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'vim-scripts/sudo.vim'
 Bundle 'tomtom/tlib_vim.git'
 Bundle 'tomtom/trag_vim.git'
 Bundle 'tomtom/viki_vim.git'
