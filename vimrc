@@ -71,9 +71,10 @@ set listchars=tab:▸\ ,eol:¬
 let g:indent_guides_enable_on_vim_startup = 1
 
 " Powerline
-let g:Powerline_symbols = 'fancy'
-let g:Powerline_theme = 'solarized256'
-let g:Powerline_colorscheme = 'solarized256'
+set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+" let g:Powerline_symbols = 'fancy'
+" let g:Powerline_theme = 'solarized256'
+" let g:Powerline_colorscheme = 'solarized256'
 
 " Viki
 let g:vikiOpenUrlWith_ANY = "exec 'silent !xdg-open '. shellescape('%{URL}')"
