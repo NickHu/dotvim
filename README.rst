@@ -8,7 +8,9 @@ Install
 
 .. code:: bash
 
-  git submodule init --update
+  ln -s ~/.vim/vimrc ~/.vimrc
+  ln -s ~/.vim/gvimrc ~/.gvimrc
+  git submodule update --init
   vim -u ~/.vim/bundles.vim
   :BundleInstall
 
