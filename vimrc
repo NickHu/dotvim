@@ -76,12 +76,6 @@ set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 " let g:Powerline_theme = 'solarized256'
 " let g:Powerline_colorscheme = 'solarized256'
 
-" MiniBufExplorer
-let g:miniBufExplMapWindowNavVim = 1 
-let g:miniBufExplMapWindowNavArrows = 1 
-let g:miniBufExplMapCTabSwitchBufs = 1 
-let g:miniBufExplModSelTarget = 1 
-
 " Solarized Dark
 set background=dark
 colorscheme solarized
