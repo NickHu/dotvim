@@ -10,6 +10,7 @@ Bundle 'gmarik/vundle'
 
 " My bundles
 Bundle 'Lokaltog/powerline'
+Bundle 'scrooloose/nerdtree.git'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'vim-scripts/sudo.vim'
 Bundle 'altercation/vim-colors-solarized'
