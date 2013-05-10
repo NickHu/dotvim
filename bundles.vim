@@ -12,10 +12,6 @@ Bundle 'gmarik/vundle'
 Bundle 'Lokaltog/powerline'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'vim-scripts/sudo.vim'
-Bundle 'tomtom/tlib_vim.git'
-Bundle 'tomtom/trag_vim.git'
-Bundle 'tomtom/viki_vim.git'
-Bundle 'tomtom/vikitasks_vim.git'
 Bundle 'altercation/vim-colors-solarized'
 
 " Filetype detection, using filetype plugin files, using indent files

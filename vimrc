@@ -76,11 +76,6 @@ set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 " let g:Powerline_theme = 'solarized256'
 " let g:Powerline_colorscheme = 'solarized256'
 
-" Viki
-let g:vikiOpenUrlWith_ANY = "exec 'silent !xdg-open '. shellescape('%{URL}')"
-let g:vikiNameTypes= 'sSeuixwf'
-" map <Leader>tt :VikiTasks<CR>
-
 " MiniBufExplorer
 let g:miniBufExplMapWindowNavVim = 1 
 let g:miniBufExplMapWindowNavArrows = 1 
