@@ -72,6 +72,9 @@ nmap <leader>l :set list!<CR>
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬
 
+" Vim notes
+let g:notes_directory = '~/Documents/Notes'
+
 " Indent guides
 let g:indent_guides_enable_on_vim_startup = 1
 

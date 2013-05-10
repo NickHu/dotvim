@@ -12,11 +12,11 @@ Bundle 'gmarik/vundle'
 Bundle 'Lokaltog/powerline'
 Bundle 'scrooloose/nerdtree.git'
 Bundle 'vim-scripts/VOoM.git'
+Bundle 'xolox/vim-notes.git'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'vim-scripts/sudo.vim'
 Bundle 'altercation/vim-colors-solarized'
 
 " Filetype detection, using filetype plugin files, using indent files
 filetype plugin indent on
-
 
