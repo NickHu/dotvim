@@ -6,6 +6,11 @@ source ~/.vim/bundles.vim
 " Turn on syntax highlighting
 syntax on
 
+" Swap \ and ,
+noremap \ ,
+noremap , <Nop>
+let mapleader = ','
+
 " Last line's indent
 set autoindent
 
