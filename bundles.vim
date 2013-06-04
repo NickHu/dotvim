@@ -10,6 +10,7 @@ Bundle 'gmarik/vundle'
 
 " My bundles
 Bundle 'Lokaltog/powerline'
+Bundle 'Lokaltog/vim-easymotion'
 Bundle 'scrooloose/nerdtree.git'
 Bundle 'vim-scripts/VOoM.git'
 Bundle 'xolox/vim-notes.git'
