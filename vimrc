@@ -72,6 +72,9 @@ nmap <leader>l :set list!<CR>
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬
 
+" Gundo
+nnoremap <F5> :GundoToggle<CR>
+
 " Vim notes
 let g:notes_directories = ['~/Documents/Notes']
 
