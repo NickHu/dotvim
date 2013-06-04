@@ -11,6 +11,7 @@ Bundle 'gmarik/vundle'
 " My bundles
 Bundle 'Lokaltog/powerline'
 Bundle 'Lokaltog/vim-easymotion'
+Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/nerdtree.git'
 Bundle 'vim-scripts/VOoM.git'
 Bundle 'sjl/gundo.vim'
