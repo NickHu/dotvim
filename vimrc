@@ -76,6 +76,9 @@ set listchars=tab:▸\ ,eol:¬
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
+" Syntastic
+let g:syntastic_c_checkers=['ycm']
+
 " Gundo
 nnoremap <F5> :GundoToggle<CR>
 
