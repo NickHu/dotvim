@@ -32,8 +32,6 @@ set hlsearch
 " Highlight C stuff
 let c_comment_strings=1
 let c_space_errors=1
-
-" Show matching bracket
 set showmatch
 
 " Start searching incrementally whilst typing
@@ -78,6 +76,9 @@ let g:ctrlp_cmd = 'CtrlP'
 
 " Syntastic
 let g:syntastic_c_checkers=['ycm']
+
+" UltiSnips
+let g:UltiSnipsExpandTrigger="<c-l>"
 
 " Gundo
 nnoremap <F5> :GundoToggle<CR>
