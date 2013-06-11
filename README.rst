@@ -15,7 +15,7 @@ Install
   vim -u ~/.vim/bundles.vim
   :BundleInstall
 
-------------
+-------------
 YouCompleteMe
 -------------
 
