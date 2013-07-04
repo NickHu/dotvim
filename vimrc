@@ -83,6 +83,12 @@ let g:UltiSnipsExpandTrigger="<c-l>"
 " Gundo
 nnoremap <F5> :GundoToggle<CR>
 
+" NERDTree
+nnoremap <F7> :NERDTreeToggle<CR>
+
+" Tagbar
+nnoremap <F8> :TagbarToggle<CR>
+
 " Vim notes
 let g:notes_directories = ['~/Documents/Notes']
 
