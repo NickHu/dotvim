@@ -95,6 +95,16 @@ let g:notes_directories = ['~/Documents/Notes']
 " Indent guides
 let g:indent_guides_enable_on_vim_startup = 1
 
+" Golden view
+let g:goldenview__enable_default_mapping = 0
+
+nmap <silent> <leader>n <Plug>GoldenViewSplit
+nmap <silent> <leader><CR> <Plug>GoldenViewSwitchMain
+nmap <silent> <leader><BS> <Plug>GoldenViewSwitchToggle
+nmap <silent> <leader>j <Plug>GoldenViewNext
+nmap <silent> <leader>k <Plug>GoldenViewPrevious
+
+
 " Powerline
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 " let g:Powerline_symbols = 'fancy'
