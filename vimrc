@@ -48,6 +48,7 @@ set grepprg=grep\ -nH\ $*
 
 " Tex flavour
 let g:tex_flavor = 'latex'
+let g:Tex_CompileRule_pdf = 'xelatex -interaction=nonstopmode $*'
 
 " Always show the statusline
 set laststatus=2
