@@ -4,3 +4,5 @@ au BufNewFile,BufRead *.tt2\=
   \ else |
   \   setf tt2 |
   \ endif
+
+au FileType tt2 let b:delimitMate_quotes = "\" ' ` %"

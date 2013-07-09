@@ -89,7 +89,6 @@ nmap <silent> <leader><BS> <Plug>GoldenViewSwitchToggle
 nmap <silent> <leader>j <Plug>GoldenViewNext
 nmap <silent> <leader>k <Plug>GoldenViewPrevious
 
-
 " Powerline
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 " let g:Powerline_symbols = 'fancy'
