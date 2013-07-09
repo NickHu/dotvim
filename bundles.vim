@@ -30,6 +30,7 @@ Bundle 'xolox/vim-notes'
 Bundle 'zhaocai/GoldenView.Vim'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'vim-scripts/sudo.vim'
+Bundle 'vim-scripts/bufkill.vim'
 Bundle 'altercation/vim-colors-solarized'
 
 " Filetype detection, using filetype plugin files, using indent files
