@@ -3,19 +3,13 @@ set encoding=utf-8
 set rtp=$HOME/.vim,$VIMRUNTIME,$HOME/.vim/after
 source ~/.vim/bundles.vim
 
-" Turn on syntax highlighting
-syntax on
-
 " Swap \ and ,
 noremap \ ,
 noremap , <Nop>
 let mapleader = ','
 
-" Last line's indent
-set autoindent
-
 " Indent more after certain structures
-set smartindent
+"set smartindent
 
 " Indent with two spaces
 set expandtab
@@ -26,16 +20,9 @@ set tabstop=2
 " Enable opening new buffers without needing to save existing changes
 set hidden
 
-" Highlight search results
-set hlsearch
-
 " Highlight C stuff
 let c_comment_strings=1
 let c_space_errors=1
-set showmatch
-
-" Start searching incrementally whilst typing
-set incsearch
 
 "" Don't wrap text
 "set nowrap
@@ -51,9 +38,6 @@ let g:tex_flavor = 'latex'
 let g:Tex_DefaultTargetFormat = 'pdf'
 let g:Tex_CompileRule_pdf = 'xelatex -interaction=nonstopmode $*'
 
-" Always show the statusline
-set laststatus=2
-
 " Show line number gutter
 set number
 
@@ -61,7 +45,7 @@ set number
 set spell! spelllang=en_gb
 
 " Always show mode
-set showmode showcmd
+set showmode
 
 " Fold markers by default
 set foldmethod=marker
@@ -71,6 +55,9 @@ nmap <leader>l :set list!<CR>
  
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬
+
+" Paste mode
+nmap <silent> <leader>p :set paste!<CR>
 
 " ctrlp
 let g:ctrlp_map = '<c-p>'
@@ -105,7 +92,6 @@ nmap <silent> <leader><CR> <Plug>GoldenViewSwitchMain
 nmap <silent> <leader><BS> <Plug>GoldenViewSwitchToggle
 nmap <silent> <leader>j <Plug>GoldenViewNext
 nmap <silent> <leader>k <Plug>GoldenViewPrevious
-
 
 " Powerline
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
