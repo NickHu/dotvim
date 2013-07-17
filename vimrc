@@ -69,6 +69,10 @@ let g:UltiSnipsExpandTrigger="<c-l>"
 " Gundo
 nnoremap <F5> :GundoToggle<CR>
 
+" VOoM
+let g:voom_ft_modes={'mediawiki': 'wiki', 'rst': 'rest', 'tex': 'latex'}
+nnoremap <F6> :VoomToggle<CR>
+
 " NERDTree
 nnoremap <F7> :NERDTreeToggle<CR>
 
