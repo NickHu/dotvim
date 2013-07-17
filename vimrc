@@ -1,12 +1,13 @@
 " Use unicode
 set encoding=utf-8
-set rtp=$HOME/.vim,$VIMRUNTIME,$HOME/.vim/after
+set rtp=HOME/.vim,$VIMRUNTIME,$HOME/.vim/after
 source ~/.vim/bundles.vim
 
 " Swap \ and ,
 noremap \ ,
 noremap , <Nop>
-let mapleader = ','
+let mapleader=','
+let maplocalleader=','
 
 " Indent more after certain structures
 "set smartindent
@@ -34,9 +35,8 @@ set showbreak=…
 set grepprg=grep\ -nH\ $*
 
 " Tex flavour
-let g:tex_flavor = 'latex'
-let g:Tex_DefaultTargetFormat = 'pdf'
-let g:Tex_CompileRule_pdf = 'xelatex -interaction=nonstopmode $*'
+let g:tex_flavor='latex'
+let g:LatexBox_latexmk_options='-xelatex'
 
 " Show line number gutter
 set number
@@ -57,8 +57,8 @@ nmap <leader>l :set list!<CR>
 set listchars=tab:▸\ ,eol:¬
 
 " ctrlp
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_map='<c-p>'
+let g:ctrlp_cmd='CtrlP'
 
 " Syntastic
 let g:syntastic_c_checkers=['ycm']
@@ -70,7 +70,7 @@ let g:UltiSnipsExpandTrigger="<c-l>"
 nnoremap <F5> :GundoToggle<CR>
 
 " VOoM
-let g:voom_ft_modes={'mediawiki': 'wiki', 'rst': 'rest', 'tex': 'latex'}
+let g:voom_ft_modes={'tex': 'latex', 'mediawiki': 'wiki', 'rst': 'rest', 'html': 'html'}
 nnoremap <F6> :VoomToggle<CR>
 
 " NERDTree
@@ -80,13 +80,13 @@ nnoremap <F7> :NERDTreeToggle<CR>
 nnoremap <F8> :TagbarToggle<CR>
 
 " Vim notes
-let g:notes_directories = ['~/Documents/Notes']
+let g:notes_directories=['~/Documents/Notes']
 
 " Indent guides
-let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_enable_on_vim_startup=1
 
 " Golden view
-let g:goldenview__enable_default_mapping = 0
+let g:goldenview__enable_default_mapping=0
 
 nmap <silent> <leader>n <Plug>GoldenViewSplit
 nmap <silent> <leader><CR> <Plug>GoldenViewSwitchMain
@@ -96,9 +96,9 @@ nmap <silent> <leader>k <Plug>GoldenViewPrevious
 
 " Powerline
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
-" let g:Powerline_symbols = 'fancy'
-" let g:Powerline_theme = 'solarized256'
-" let g:Powerline_colorscheme = 'solarized256'
+" let g:Powerline_symbols='fancy'
+" let g:Powerline_theme='solarized256'
+" let g:Powerline_colorscheme='solarized256'
 
 " Solarized Dark
 set background=dark
