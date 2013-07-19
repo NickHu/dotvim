@@ -96,9 +96,7 @@ nmap <silent> <leader>k <Plug>GoldenViewPrevious
 
 " Powerline
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
-" let g:Powerline_symbols='fancy'
-" let g:Powerline_theme='solarized256'
-" let g:Powerline_colorscheme='solarized256'
+let g:powerline_config_overrides={'ext': {'vim': {'colorscheme': 'solarized'}}}
 
 " Solarized Dark
 set background=dark
