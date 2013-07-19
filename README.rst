@@ -35,3 +35,6 @@ Powerline
   fc-cache -vf ~/.fonts
   mkdir -p ~/.config/fontconfig/conf.d
   ln -s ~/.vim/bundle/powerline/font/10-powerline-symbols.conf ~/.config/fontconfig/conf.d/
+
+  mkdir ~/.config
+  ln -s ~/.vim/bundle/powerline/powerline/config_files ~/.config/powerline
