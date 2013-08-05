@@ -46,6 +46,8 @@ NeoBundle 'vim-perl/vim-perl'
 NeoBundle 'xolox/vim-notes', {'depends': 'xolox/vim-misc'}
 NeoBundle 'zhaocai/GoldenView.Vim'
 NeoBundle 'nathanaelkane/vim-indent-guides'
+NeoBundle 'kshenoy/vim-signature'
+NeoBundle 'mhinz/vim-signify'
 NeoBundle 'sudo.vim'
 NeoBundle 'bufkill.vim'
 NeoBundle 'altercation/vim-colors-solarized'
