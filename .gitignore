@@ -1,4 +1,4 @@
 .netrwhist
 cache
 bundle/*
-!bundle/vundle/
+!bundle/neobundle.vim

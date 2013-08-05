@@ -1,42 +1,61 @@
-" Vundle
 " Vim, not vi
 set nocompatible
-filetype off
 
-set rtp+=~/.vim/bundle/vundle/ 
-call vundle#rc()
+if has('vim_starting')
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
 
-Bundle 'gmarik/vundle'
+call neobundle#rc(expand('~/.vim/bundle/'))
+
+" Let NeoBundle manage NeoBundle
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+" Recommended to install
+NeoBundle 'Shougo/vimproc', {
+  \ 'build' : {
+  \   'windows' : 'make -f make_mingw32.mak',
+  \   'cygwin' : 'make -f make_cygwin.mak',
+  \   'mac' : 'make -f make_mac.mak',
+  \   'unix' : 'make -f make_unix.mak',
+  \  },
+  \ }
 
 " My bundles
-Bundle 'Lokaltog/powerline'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'SirVer/ultisnips'
-Bundle 'Raimondi/delimitMate'
-Bundle 'kien/ctrlp.vim'
-Bundle 'majutsushi/tagbar'
-Bundle 'scrooloose/syntastic'
-Bundle 'scrooloose/nerdtree'
-Bundle 'tpope/vim-sensible'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-unimpaired'
-Bundle 'tpope/vim-commentary'
-Bundle 'tpope/vim-repeat'
-Bundle 'godlygeek/tabular'
-Bundle 'vim-scripts/VOoM'
-Bundle 'chikamichi/mediawiki.vim'
-Bundle 'sjl/gundo.vim'
-Bundle 'LaTeX-Box-Team/LaTeX-Box' 
-Bundle 'vim-perl/vim-perl'
-Bundle 'xolox/vim-notes'
-  Bundle 'xolox/vim-misc'
-Bundle 'zhaocai/GoldenView.Vim'
-Bundle 'nathanaelkane/vim-indent-guides'
-Bundle 'vim-scripts/sudo.vim'
-Bundle 'vim-scripts/bufkill.vim'
-Bundle 'altercation/vim-colors-solarized'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/neocomplete.vim'
+NeoBundle 'Shougo/neosnippet.vim'
+NeoBundle 'honza/vim-snippets'
+NeoBundle 'Shougo/vimfiler.vim'
+NeoBundle 'Lokaltog/powerline'
+NeoBundle 'zhaocai/linepower.vim'
+NeoBundle 'Lokaltog/vim-easymotion'
+NeoBundle 'Raimondi/delimitMate'
+NeoBundle 'majutsushi/tagbar'
+NeoBundle 'scrooloose/syntastic'
+NeoBundle 'tpope/vim-sensible'
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'tpope/vim-unimpaired'
+NeoBundle 'tpope/vim-commentary'
+NeoBundle 'tpope/vim-repeat'
+NeoBundle 'godlygeek/tabular'
+NeoBundle 'vim-scripts/VOoM'
+NeoBundle 'chikamichi/mediawiki.vim'
+NeoBundle 'sjl/gundo.vim'
+NeoBundle 'LaTeX-Box-Team/LaTeX-Box' 
+NeoBundle 'vim-perl/vim-perl'
+NeoBundle 'xolox/vim-notes', {'depends': 'xolox/vim-misc'}
+NeoBundle 'zhaocai/GoldenView.Vim'
+NeoBundle 'nathanaelkane/vim-indent-guides'
+NeoBundle 'sudo.vim'
+NeoBundle 'bufkill.vim'
+NeoBundle 'altercation/vim-colors-solarized'
 
 " Filetype detection, using filetype plugin files, using indent files
 filetype plugin indent on
 
+NeoBundleCheck
+
+if !has('vim_starting')
+  " Call on_source hook when reloading .vimrc.
+  call neobundle#call_hook('on_source')
+endif
