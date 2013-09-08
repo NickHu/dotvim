@@ -24,6 +24,7 @@ NeoBundle 'Shougo/vimproc', {
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neocomplete.vim'
 NeoBundle 'Shougo/neosnippet.vim'
+NeoBundle 'Shougo/vimshell.vim'
 NeoBundle 'honza/vim-snippets'
 NeoBundle 'Shougo/vimfiler.vim'
 NeoBundle 'Lokaltog/powerline'
@@ -50,6 +51,7 @@ NeoBundle 'kshenoy/vim-signature'
 NeoBundle 'mhinz/vim-signify'
 NeoBundle 'sudo.vim'
 NeoBundle 'bufkill.vim'
+NeoBundle 'DrawIt'
 NeoBundle 'altercation/vim-colors-solarized'
 
 " Filetype detection, using filetype plugin files, using indent files
