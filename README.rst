@@ -13,16 +13,7 @@ Install
   ln -s ~/.vim/gvimrc ~/.gvimrc
   git submodule update --init
   vim -u ~/.vim/bundles.vim
-  :BundleInstall
-
--------------
-YouCompleteMe
--------------
-
-.. code:: bash
-
-  cmake -G "Unix Makefiles" -DUSE_SYSTEM_LIBCLANG=ON . ~/.vim/bundle/YouCompleteMe/cpp
-  make ycm_core
+  :NeoBundleInstall
 
 ----------
 Powerline
