@@ -53,6 +53,7 @@ NeoBundle 'mhinz/vim-signify'
 NeoBundle 'sudo.vim'
 NeoBundle 'bufkill.vim'
 NeoBundle 'DrawIt'
+NeoBundle 'matchit.zip'
 NeoBundle 'altercation/vim-colors-solarized'
 
 " Filetype detection, using filetype plugin files, using indent files
