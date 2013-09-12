@@ -163,7 +163,12 @@ nnoremap <silent> <F7> :VimFilerExplorer<CR>
 nnoremap <silent> <F8> :TagbarToggle<CR>
 
 " Vim notes
-let g:notes_directories=['~/Documents/Notes']
+" let g:notes_directories=['~/Documents/Notes']
+
+"Riv
+let g:riv_global_leader = '<leader>e'
+let g:riv_fold_auto_update = 0
+let g:riv_default_path = '~/Documents/Notes'
 
 " Indent guides
 let g:indent_guides_enable_on_vim_startup=1

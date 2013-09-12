@@ -44,7 +44,8 @@ NeoBundle 'chikamichi/mediawiki.vim'
 NeoBundle 'sjl/gundo.vim'
 NeoBundle 'LaTeX-Box-Team/LaTeX-Box' 
 NeoBundle 'vim-perl/vim-perl'
-NeoBundle 'xolox/vim-notes', {'depends': 'xolox/vim-misc'}
+" NeoBundle 'xolox/vim-notes', {'depends': 'xolox/vim-misc'}
+NeoBundle 'Rykka/riv.vim'
 NeoBundle 'zhaocai/GoldenView.Vim'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'kshenoy/vim-signature'
