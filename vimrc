@@ -18,6 +18,9 @@ set shiftwidth=2
 set softtabstop=2
 set tabstop=2
 
+" 80 column rule
+set colorcolumn=80
+
 " Enable opening new buffers without needing to save existing changes
 set hidden
 
@@ -140,7 +143,10 @@ let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
 nnoremap <silent> <F5> :GundoToggle<CR>
 
 " VOoM
-let g:voom_ft_modes={'tex': 'latex', 'mediawiki': 'wiki', 'rst': 'rest', 'html': 'html'}
+let g:voom_ft_modes=
+  \ {
+    \ 'tex': 'latex', 'mediawiki': 'wiki', 'rst': 'rest', 'html': 'html'
+  \ }
 nnoremap <silent> <F6> :VoomToggle<CR>
 
 " VimFiler
