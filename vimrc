@@ -39,7 +39,10 @@ set grepprg=grep\ -nH\ $*
 
 " Tex flavour
 let g:tex_flavor='latex'
+let g:LatexBox_latexmk_preview_continuously=1
 let g:LatexBox_latexmk_options='-xelatex'
+let g:LatexBox_quickfix=2
+let g:LatexBox_Folding=1
 
 " Show line number gutter
 set number
