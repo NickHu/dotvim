@@ -168,9 +168,6 @@ nnoremap <silent> <F7> :VimFilerExplorer<CR>
 " Tagbar
 nnoremap <silent> <F8> :TagbarToggle<CR>
 
-" Vim notes
-" let g:notes_directories=['~/Documents/Notes']
-
 "Riv
 let g:riv_global_leader = '<leader>e'
 let g:riv_fold_auto_update = 0
@@ -188,9 +185,9 @@ nmap <silent> <leader><BS> <Plug>GoldenViewSwitchToggle
 nmap <silent> <leader>j <Plug>GoldenViewNext
 nmap <silent> <leader>k <Plug>GoldenViewPrevious
 
-" Powerline
-set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
-let g:powerline_config_overrides={'ext': {'vim': {'colorscheme': 'solarized'}}}
+" Airline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
 
 " Solarized Dark
 set background=dark
