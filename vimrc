@@ -66,6 +66,13 @@ set listchars=tab:▸\ ,eol:¬
 nnoremap <silent> <leader>x :bd<CR>
 nnoremap <silent> <leader>X :BD<CR>
 
+" sudo save
+command W w sudo:%
+command Wq wq sudo:%
+
+" Vimproc remaps
+cnoreabbrev <expr> ! ((getcmdtype() is# ':' && getcmdpos()==2)?('VimProcBang'):('!'))
+
 " Unite
 call unite#custom#source('file,file/new,buffer,file_rec,file_rec/async',
 \ 'matchers', 'matcher_fuzzy')
