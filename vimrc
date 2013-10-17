@@ -192,7 +192,7 @@ nnoremap <silent> <F7> :VimFilerExplorer<CR>
 " Tagbar
 nnoremap <silent> <F8> :TagbarToggle<CR>
 
-"Riv
+" Riv
 let g:riv_global_leader = '<leader>e'
 let g:riv_fold_auto_update = 0
 let g:riv_default_path = '~/Documents/Notes'
@@ -208,6 +208,13 @@ nmap <silent> <leader><CR> <Plug>GoldenViewSwitchMain
 nmap <silent> <leader><BS> <Plug>GoldenViewSwitchToggle
 nmap <silent> <leader>j <Plug>GoldenViewNext
 nmap <silent> <leader>k <Plug>GoldenViewPrevious
+
+" Fugitive
+autocmd User fugitive
+  \ if fugitive#buffer().type() =~# '^\%(tree\|blob\)$' |
+  \   nnoremap <buffer> .. :edit %:h<CR> |
+  \ endif
+autocmd BufReadPost fugitive://* set bufhidden=delete
 
 " Airline
 let g:airline#extensions#tabline#enabled = 1
