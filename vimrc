@@ -1,79 +1,106 @@
-" Use unicode
+" Use unicode {{{
 set encoding=utf-8
+" }}}
+
+" Initialisation {{{
 set rtp=HOME/.vim,$VIMRUNTIME,$HOME/.vim/after
 source ~/.vim/bundles.vim
+" }}}
 
-" Swap \ and ,
+" Swap \ and , {{{
 noremap \ ,
 noremap , <Nop>
 let mapleader=','
 let maplocalleader=','
+" }}}
 
-" Indent more after certain structures
-"set smartindent
+" Indent more after certain structures {{{
+" set smartindent
+" }}}
 
-" Indent with two spaces
+" Indent with two spaces {{{
 set expandtab
 set shiftwidth=2
 set softtabstop=2
 set tabstop=2
+" }}}
 
-" 80 column rule
+" 80 column rule {{{
 set colorcolumn=80
+" }}}
 
-" Enable opening new buffers without needing to save existing changes
+" Enable opening new buffers without needing to save existing changes {{{
 set hidden
+" }}}
 
-" Highlight C stuff
+" Highlight C stuff {{{
 let c_comment_strings=1
 let c_space_errors=1
+" }}}
 
-"" Don't wrap text
-"set nowrap
-" Break at nice places
+"" Don't wrap text {{{
+" set nowrap
+" }}}
+
+" Break at nice places {{{
 set linebreak
 set showbreak=…
+" }}}
 
-" Grep command
+" Grep command {{{
 set grepprg=grep\ -nH\ $*
+" }}}
 
-" Tex flavour
+" Tex flavour {{{
 let g:tex_flavor='latex'
+" }}}
+
+" LaTeXBox {{{
 let g:LatexBox_latexmk_preview_continuously=1
 let g:LatexBox_latexmk_options='-xelatex'
 let g:LatexBox_quickfix=2
 let g:LatexBox_Folding=1
+" }}}
 
-" Show line number gutter
+" Show line number gutter {{{
 set number
+" }}}
 
-" Spell checking
+" Spell checking {{{
 set spell! spelllang=en_gb
+" }}}
 
-" Always show mode
+" Always show mode {{{
 set showmode
+" }}}
 
-" Fold markers by default
+" Fold markers by default {{{
 set foldmethod=marker
-"
-" Shortcut to rapidly toggle `set list`
-nmap <leader>l :set list!<CR>
- 
-" Use the same symbols as TextMate for tabstops and EOLs
-set listchars=tab:▸\ ,eol:¬
+" }}}
 
-" Buffer killing
+" Shortcut to rapidly toggle `set list` {{{
+nmap <leader>l :set list!<CR>
+" }}}
+ 
+" Use the same symbols as TextMate for tabstops and EOLs {{{
+set listchars=tab:▸\ ,eol:¬
+" }}}
+
+" Buffer killing {{{
 nnoremap <silent> <leader>x :bd<CR>
 nnoremap <silent> <leader>X :BD<CR>
+" }}}
 
-" sudo save
+" sudo save {{{
 command W w sudo:%
 command Wq wq sudo:%
+" }}}
 
-" Vimproc remaps
+" Vimproc remaps {{{
 cnoreabbrev <expr> ! ((getcmdtype() is# ':' && getcmdpos()==2)?('VimProcBang'):('!'))
+" }}}
 
-" Unite
+" Unite {{{
 call unite#custom#source('file,file/new,buffer,file_rec,file_rec/async',
 \ 'matchers', 'matcher_fuzzy')
 call unite#filters#sorter_default#use(['sorter_rank'])
@@ -104,8 +131,9 @@ let g:unite_source_history_yank_enable = 1
 nnoremap <silent> <leader>y :Unite history/yank<CR>
 
 let g:unite_force_overwrite_statusline = 0
+" }}}
 
-" NeoComplete
+" NeoComplete {{{
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
 let g:neocomplete#sources#syntax#min_keyword_length = 3
@@ -148,8 +176,9 @@ let g:neocomplete#sources#omni#input_patterns.c =
 \ '[^.[:digit:] *\t]\%(\.\|->\)\%(\h\w*\)\?'
 let g:neocomplete#sources#omni#input_patterns.cpp =
 \ '[^.[:digit:] *\t]\%(\.\|->\)\%(\h\w*\)\?\|\h\w*::\%(\h\w*\)\?'
+" }}}
 
-" NeoSnippet
+" NeoSnippet {{{
 " SuperTab like snippets behavior.
 smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 \ "\<Plug>(neosnippet_expand_or_jump)"
@@ -162,18 +191,21 @@ endif
 
 " Tell Neosnippet about the other snippets
 let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
+" }}}
 
-" Gundo
+" Gundo {{{
 nnoremap <silent> <F5> :GundoToggle<CR>
+" }}}
 
-" VOoM
+" VOoM {{{
 let g:voom_ft_modes=
   \ {
     \ 'tex': 'latex', 'mediawiki': 'wiki', 'rst': 'rest', 'html': 'html'
   \ }
 nnoremap <silent> <F6> :VoomToggle<CR>
+" }}}
 
-" VimFiler
+" VimFiler {{{
 let g:vimfiler_force_overwrite_statusline = 0
 let g:vimfiler_as_default_explorer = 1
 
@@ -188,19 +220,23 @@ let g:vimfiler_file_icon = '-'
 let g:vimfiler_marked_file_icon = '*'
 
 nnoremap <silent> <F7> :VimFilerExplorer<CR>
+" }}}
 
-" Tagbar
+" Tagbar {{{
 nnoremap <silent> <F8> :TagbarToggle<CR>
+" }}}
 
-" Riv
+" Riv {{{
 let g:riv_global_leader = '<leader>e'
 let g:riv_fold_auto_update = 0
 let g:riv_default_path = '~/Documents/Notes'
+" }}}
 
-" Indent guides
+" Indent guides {{{
 let g:indent_guides_enable_on_vim_startup=1
+" }}}
 
-" Golden view
+" Golden view {{{
 let g:goldenview__enable_default_mapping=0
 
 nmap <silent> <leader>n <Plug>GoldenViewSplit
@@ -208,24 +244,29 @@ nmap <silent> <leader><CR> <Plug>GoldenViewSwitchMain
 nmap <silent> <leader><BS> <Plug>GoldenViewSwitchToggle
 nmap <silent> <leader>j <Plug>GoldenViewNext
 nmap <silent> <leader>k <Plug>GoldenViewPrevious
+" }}}
 
-" Fugitive
+" Fugitive {{{
 autocmd User fugitive
   \ if fugitive#buffer().type() =~# '^\%(tree\|blob\)$' |
   \   nnoremap <buffer> .. :edit %:h<CR> |
   \ endif
 autocmd BufReadPost fugitive://* set bufhidden=delete
+" }}}
 
-" Syntastic
+" Syntastic {{{
 let g:syntastic_error_symbol='✗'
 let g:syntastic_style_error_symbol='S✗'
 let g:syntastic_warning_symbol='⚠'
 let g:syntastic_style_warning_symbol='S⚠'
+" }}}
 
-" Airline
+" Airline {{{
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
+" }}}
 
-" Solarized Dark
+" Solarized Dark {{{
 set background=dark
 colorscheme solarized
+" }}}
