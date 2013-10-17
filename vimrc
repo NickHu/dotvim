@@ -216,6 +216,12 @@ autocmd User fugitive
   \ endif
 autocmd BufReadPost fugitive://* set bufhidden=delete
 
+" Syntastic
+let g:syntastic_error_symbol='✗'
+let g:syntastic_style_error_symbol='S✗'
+let g:syntastic_warning_symbol='⚠'
+let g:syntastic_style_warning_symbol='S⚠'
+
 " Airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
