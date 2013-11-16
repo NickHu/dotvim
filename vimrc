@@ -57,8 +57,9 @@ let g:tex_flavor='latex'
 
 " LaTeXBox {{{
 let g:LatexBox_latexmk_preview_continuously=1
-let g:LatexBox_latexmk_options='-xelatex'
+let g:LatexBox_latexmk_options='-xelatex -output-directory=build'
 let g:LatexBox_quickfix=2
+let g:LatexBox_build_dir="build"
 let g:LatexBox_Folding=1
 " }}}
 
