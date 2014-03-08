@@ -246,6 +246,10 @@ let g:riv_default_path = '~/Documents/Notes'
 let g:indent_guides_enable_on_vim_startup=1
 " }}}
 
+" Numbers {{{
+nnoremap <silent> <leader>0 :NumbersToggle<CR>
+" }}}
+
 " Golden view {{{
 let g:goldenview__enable_default_mapping=0
 
