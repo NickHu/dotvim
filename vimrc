@@ -14,8 +14,8 @@ let mapleader=','
 let maplocalleader=','
 " }}}
 
-" Indent more after certain structures {{{
-" set smartindent
+" C indentation rules{{{
+" set cindent
 " }}}
 
 " Indent with two spaces {{{
