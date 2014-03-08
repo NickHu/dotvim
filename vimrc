@@ -169,15 +169,24 @@ imap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expan
     return !col || getline('.')[col - 1]  =~ '\s'
   endfunction "}}}
 
-" Enable heavy omni completion.
-if !exists('g:neocomplete#sources#omni#input_patterns')
-  let g:neocomplete#sources#omni#input_patterns = {}
+if !exists('g:neocomplete#force_omni_input_patterns')
+  let g:neocomplete#force_omni_input_patterns = {}
 endif
-let g:neocomplete#sources#omni#input_patterns.c =
+let g:neocomplete#force_omni_input_patterns.c =
 \ '[^.[:digit:] *\t]\%(\.\|->\)\%(\h\w*\)\?'
-let g:neocomplete#sources#omni#input_patterns.cpp =
+let g:neocomplete#force_omni_input_patterns.cpp =
 \ '[^.[:digit:] *\t]\%(\.\|->\)\%(\h\w*\)\?\|\h\w*::\%(\h\w*\)\?'
 " }}}
+
+" Marching {{{
+let g:marching_clang_command = "clang"
+
+let g:marching_include_paths = filter(
+  \ split(glob('/usr/include/c++/*'), '\n') +
+  \ split(glob('/usr/include/*/c++/*'), '\n') +
+  \ split(glob('/usr/include/*/'), '\n'),
+  \ 'isdirectory(v:val)')
+"}}}
 
 " NeoSnippet {{{
 " SuperTab like snippets behavior.

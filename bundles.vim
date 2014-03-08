@@ -23,6 +23,7 @@ NeoBundle 'Shougo/vimproc', {
 " My bundles
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neocomplete.vim'
+NeoBundle 'osyo-manga/vim-marching', { 'depends' : 'osyo-manga/vim-reunions' }
 NeoBundle 'Shougo/neosnippet.vim'
 NeoBundle 'Shougo/vimshell.vim'
 NeoBundle 'gregsexton/VimCalc'
