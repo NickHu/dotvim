@@ -25,6 +25,8 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neocomplete.vim'
 NeoBundle 'osyo-manga/vim-marching', { 'depends' : 'osyo-manga/vim-reunions' }
 NeoBundle 'Shougo/neosnippet.vim'
+NeoBundle 'Shougo/neosnippet-snippets'
+NeoBundle 'Shougo/context_filetype.vim'
 NeoBundle 'Shougo/vimshell.vim'
 NeoBundle 'gregsexton/VimCalc'
 NeoBundle 'honza/vim-snippets'
