@@ -38,7 +38,7 @@ let c_comment_strings=1
 let c_space_errors=1
 " }}}
 
-"" Don't wrap text {{{
+" Don't wrap text {{{
 " set nowrap
 " }}}
 
@@ -57,7 +57,7 @@ let g:tex_flavor='latex'
 
 " LaTeXBox {{{
 let g:LatexBox_latexmk_preview_continuously=1
-let g:LatexBox_latexmk_options='-xelatex -output-directory=build'
+let g:LatexBox_latexmk_options='-shell-escape -lualatex -output-directory=build'
 let g:LatexBox_quickfix=2
 let g:LatexBox_build_dir="build"
 let g:LatexBox_Folding=1
@@ -95,6 +95,10 @@ nnoremap <silent> <leader>X :BD<CR>
 " sudo save {{{
 command W w sudo:%
 command Wq wq sudo:%
+" }}}
+
+" date {{{
+command Date r!date "+\%A, \%-d \%B"
 " }}}
 
 " Vimproc remaps {{{
@@ -234,12 +238,95 @@ nnoremap <silent> <F7> :VimFilerExplorer<CR>
 
 " Tagbar {{{
 nnoremap <silent> <F8> :TagbarToggle<CR>
+let g:tagbar_type_haskell = {
+    \ 'ctagsbin'  : 'hasktags',
+    \ 'ctagsargs' : '-x -c -o-',
+    \ 'kinds'     : [
+        \  'm:modules:0:1',
+        \  'd:data: 0:1',
+        \  'd_gadt: data gadt:0:1',
+        \  't:type names:0:1',
+        \  'nt:new types:0:1',
+        \  'c:classes:0:1',
+        \  'cons:constructors:1:1',
+        \  'c_gadt:constructor gadt:1:1',
+        \  'c_a:constructor accessors:1:1',
+        \  'ft:function types:1:1',
+        \  'fi:function implementations:0:1',
+        \  'o:others:0:1'
+    \ ],
+    \ 'sro'        : '.',
+    \ 'kind2scope' : {
+        \ 'm' : 'module',
+        \ 'c' : 'class',
+        \ 'd' : 'data',
+        \ 't' : 'type'
+    \ },
+    \ 'scope2kind' : {
+        \ 'module' : 'm',
+        \ 'class'  : 'c',
+        \ 'data'   : 'd',
+        \ 'type'   : 't'
+    \ }
+\ }
+" }}}
+
+" simplenote.vim {{{
+noremap <silent> <F9> :Simplenote -l<cr>
+let g:SimplenoteUsername="me@nickhu.co.uk"
+let g:SimplenoteVertical=1
+let g:SimplenoteFiletype="markdown"
 " }}}
 
 " Riv {{{
 let g:riv_global_leader = '<leader>e'
 let g:riv_fold_auto_update = 0
 let g:riv_default_path = '~/Documents/Notes'
+" }}}
+
+" Markdown {{{
+let g:vim_markdown_math=1
+let g:instant_markdown_autostart = 0
+fun! MyAddToFileType(ft)
+  if index(split(&ft, '\.'), a:ft) == -1
+    let &ft .= '.'.a:ft
+  endif
+endfun
+au FileType markdown call MyAddToFileType('mkd')
+au FileType mkd      call MyAddToFileType('markdown')
+" }}}
+
+" ghc-mod {{{
+" Type Lookup
+map <silent> <leader>tw :GhcModTypeInsert<CR>
+let g:necoghc_enable_detailed_browse = 1
+let g:ghcmod_open_quickfix_function = 'GhcModQuickFix'
+function! GhcModQuickFix()
+  " for unite.vim and unite-quickfix
+  :Unite -no-empty quickfix
+endfunction
+au FileType haskell nnoremap <buffer> <silent> <F1> :GhcModType<CR>
+au FileType haskell nnoremap <buffer> <silent> <F2> :GhcModTypeClear<CR>
+au FileType haskell nnoremap <buffer> <silent> <F3> :GhcModInfo<CR>
+au BufWritePost *.hs GhcModCheckAndLintAsync
+" }}}
+
+" haskell-mode {{{
+" use ghc functionality for haskell files
+" au BufEnter *.hs compiler ghc
+" let g:haddock_browser="xdg-open"
+" }}}
+
+" hdevtools {{{
+" au FileType haskell nnoremap <buffer> <silent> <F3> :HdevtoolsInfo<CR>
+" }}}
+
+" pointfree {{{
+au BufEnter *.hs set formatprg=xargs\ pointfree
+" }}}
+
+" slime {{{
+let g:slime_target="tmux"
 " }}}
 
 " Indent guides {{{
@@ -273,6 +360,9 @@ let g:syntastic_error_symbol='✗'
 let g:syntastic_style_error_symbol='S✗'
 let g:syntastic_warning_symbol='⚠'
 let g:syntastic_style_warning_symbol='S⚠'
+map <silent> <Leader>e :Errors<CR>
+map <Leader>s :SyntasticToggleMode<CR>
+let g:syntastic_auto_loc_list=0
 " }}}
 
 " Airline {{{

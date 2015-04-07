@@ -5,7 +5,7 @@ if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
-call neobundle#rc(expand('~/.vim/bundle/'))
+call neobundle#begin(expand('~/.vim/bundle/'))
 
 " Let NeoBundle manage NeoBundle
 NeoBundleFetch 'Shougo/neobundle.vim'
@@ -22,6 +22,7 @@ NeoBundle 'Shougo/vimproc', {
 
 " My bundles
 NeoBundle 'Shougo/unite.vim'
+NeoBundle 'osyo-manga/unite-quickfix', { 'depends' : 'Shougo/unite.vim' }
 NeoBundle 'Shougo/neocomplete.vim'
 NeoBundle 'osyo-manga/vim-marching', { 'depends' : 'osyo-manga/vim-reunions' }
 NeoBundle 'Shougo/neosnippet.vim'
@@ -43,13 +44,28 @@ NeoBundle 'tpope/vim-unimpaired'
 NeoBundle 'tpope/vim-speeddating'
 NeoBundle 'tpope/vim-commentary'
 NeoBundle 'tpope/vim-repeat'
+NeoBundle 'kana/vim-textobj-indent', { 'depends' : 'kana/vim-textobj-user' }
 NeoBundle 'godlygeek/tabular'
-NeoBundle 'vim-scripts/VOoM'
+NeoBundle 'VOoM'
 NeoBundle 'chikamichi/mediawiki.vim'
 NeoBundle 'sjl/gundo.vim'
 NeoBundle 'LaTeX-Box-Team/LaTeX-Box' 
+NeoBundle 'jpalardy/vim-slime'
+NeoBundle 'christoomey/vim-tmux-navigator'
 NeoBundle 'vim-perl/vim-perl'
-NeoBundle 'Rykka/riv.vim'
+NeoBundle 'wting/rust.vim'
+NeoBundle 'eagletmt/ghcmod-vim'
+NeoBundle 'eagletmt/neco-ghc'
+" NeoBundle 'bitc/vim-hdevtools'
+NeoBundle 'bitc/lushtags'
+NeoBundle 'Twinside/vim-haskellFold'
+NeoBundle 'Twinside/vim-hoogle'
+NeoBundle 'haskell.vim'
+NeoBundle 'mrtazz/simplenote.vim'
+"NeoBundle 'xolox/vim-session', { 'depends' : 'xolox/vim-misc' }
+NeoBundle 'Rykka/riv.vim', { 'depends' : 'Rykka/clickable.vim' }
+NeoBundle 'plasticboy/vim-markdown', { 'depends' : 'godlygeek/tabular' }
+NeoBundle 'suan/vim-instant-markdown'
 NeoBundle 'zhaocai/GoldenView.Vim'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'myusuf3/numbers.vim'
@@ -72,3 +88,5 @@ if !has('vim_starting')
   " Call on_source hook when reloading .vimrc.
   call neobundle#call_hook('on_source')
 endif
+call neobundle#end()
+NeoBundleCheck
