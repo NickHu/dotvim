@@ -3,8 +3,8 @@ set encoding=utf-8
 " }}}
 
 " Initialisation {{{
-set rtp=HOME/.vim,$VIMRUNTIME,$HOME/.vim/after
-source ~/.vim/bundles.vim
+" set rtp=HOME/.vim,$VIMRUNTIME,$HOME/.vim/after
+source ~/.vim/plugins.vim
 " }}}
 
 " Swap \ and , {{{
