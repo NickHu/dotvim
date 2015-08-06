@@ -286,9 +286,9 @@ let g:SimplenoteFiletype="markdown"
 " }}}
 
 " Riv {{{
-let g:riv_global_leader = '<leader>e'
-let g:riv_fold_auto_update = 0
-let g:riv_default_path = '~/Documents/Notes'
+" let g:riv_global_leader = '<leader>e'
+" let g:riv_fold_auto_update = 0
+" let g:riv_default_path = '~/Documents/Notes'
 " }}}
 
 " Markdown {{{

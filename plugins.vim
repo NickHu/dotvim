@@ -8,15 +8,15 @@ Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'Shougo/unite.vim'
 Plug 'osyo-manga/unite-quickfix'
 Plug 'Shougo/neocomplete.vim'
-Plug 'osyo-manga/vim-reunions'
-Plug 'osyo-manga/vim-marching'
+Plug 'osyo-manga/vim-reunions', { 'for': ['c', 'cpp'] }
+Plug 'osyo-manga/vim-marching', { 'for': ['c', 'cpp'] }
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'Shougo/context_filetype.vim'
-Plug 'Shougo/vimshell.vim'
-Plug 'gregsexton/VimCalc'
+Plug 'Shougo/vimshell.vim', { 'on': 'VimShell' }
+Plug 'gregsexton/VimCalc', { 'on': 'Calc' }
 Plug 'honza/vim-snippets'
-Plug 'Shougo/vimfiler.vim'
+Plug 'Shougo/vimfiler.vim', { 'on': 'VimFilerExplorer' }
 Plug 'bling/vim-airline'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'Raimondi/delimitMate'
@@ -31,26 +31,24 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-indent'
-Plug 'godlygeek/tabular'
-Plug 'VOoM'
-Plug 'chikamichi/mediawiki.vim'
-Plug 'sjl/gundo.vim'
-Plug 'LaTeX-Box-Team/LaTeX-Box' 
-Plug 'jpalardy/vim-slime'
+Plug 'godlygeek/tabular', { 'on': 'Tabularize' }
+Plug 'VOoM', { 'on': 'VoomToggle' }
+Plug 'chikamichi/mediawiki.vim', { 'for': 'mediawiki' }
+Plug 'sjl/gundo.vim', { 'on': 'GundoToggle' }
+Plug 'LaTeX-Box-Team/LaTeX-Box', { 'for': 'tex' } 
+Plug 'jpalardy/vim-slime', { 'on': ['SlimeConfig', 'SlimeSend'] }
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'vim-perl/vim-perl'
-Plug 'wting/rust.vim'
-Plug 'eagletmt/ghcmod-vim'
-Plug 'eagletmt/neco-ghc'
-Plug 'bitc/lushtags'
-Plug 'Twinside/vim-haskellFold'
-Plug 'Twinside/vim-hoogle'
-Plug 'haskell.vim'
-Plug 'mrtazz/simplenote.vim'
-Plug 'Rykka/clickable.vim'
-Plug 'Rykka/riv.vim'
-Plug 'plasticboy/vim-markdown'
-Plug 'suan/vim-instant-markdown'
+Plug 'vim-perl/vim-perl', { 'for': 'perl' }
+Plug 'wting/rust.vim', { 'for': 'rust' }
+Plug 'eagletmt/ghcmod-vim', { 'for': 'haskell' }
+Plug 'eagletmt/neco-ghc', { 'for': 'haskell' }
+Plug 'bitc/lushtags', { 'for': 'haskell' }
+Plug 'Twinside/vim-haskellFold', { 'for': 'haskell' }
+Plug 'Twinside/vim-hoogle', { 'for': 'haskell' }
+Plug 'haskell.vim', { 'for': 'haskell' }
+Plug 'mrtazz/simplenote.vim', { 'on': 'Simplenote' }
+Plug 'plasticboy/vim-markdown', { 'for': 'mkd.markdown' }
+Plug 'suan/vim-instant-markdown', { 'for': 'mkd.markdown' }
 Plug 'zhaocai/GoldenView.Vim'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'myusuf3/numbers.vim'
