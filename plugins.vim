@@ -24,10 +24,10 @@ Plug 'Shougo/context_filetype.vim'
 Plug 'Shougo/vimshell.vim', { 'on': 'VimShell' }
 Plug 'gregsexton/VimCalc', { 'on': 'Calc' }
 Plug 'honza/vim-snippets'
-Plug 'Shougo/vimfiler.vim', { 'on': 'VimFilerExplorer' }
+Plug 'Shougo/vimfiler.vim'
 Plug 'bling/vim-airline'
 Plug 'Lokaltog/vim-easymotion'
-Plug 'Raimondi/delimitMate'
+" Plug 'Raimondi/delimitMate'
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-sensible'
