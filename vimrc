@@ -280,7 +280,9 @@ let g:tagbar_type_haskell = {
 " simplenote.vim {{{
 noremap <silent> <F9> :Simplenote -l<cr>
 let g:SimplenoteUsername="me@nickhu.co.uk"
-let g:SimplenotePassword=simplenotepassword
+if exists("simplenotepassword")
+  let g:SimplenotePassword=simplenotepassword
+endif
 let g:SimplenoteVertical=1
 let g:SimplenoteFiletype="markdown"
 " }}}
