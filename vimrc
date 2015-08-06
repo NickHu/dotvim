@@ -5,6 +5,7 @@ set encoding=utf-8
 " Initialisation {{{
 " set rtp=HOME/.vim,$VIMRUNTIME,$HOME/.vim/after
 source ~/.vim/plugins.vim
+source ~/.vim/sensitive.vim
 " }}}
 
 " Swap \ and , {{{
@@ -279,6 +280,7 @@ let g:tagbar_type_haskell = {
 " simplenote.vim {{{
 noremap <silent> <F9> :Simplenote -l<cr>
 let g:SimplenoteUsername="me@nickhu.co.uk"
+let g:SimplenotePassword=simplenotepassword
 let g:SimplenoteVertical=1
 let g:SimplenoteFiletype="markdown"
 " }}}

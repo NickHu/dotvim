@@ -2,3 +2,4 @@
 cache
 plugged/*
 autoload/plug.vim*
+sensitive.vim
