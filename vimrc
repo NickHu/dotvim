@@ -220,7 +220,8 @@ nnoremap <silent> <F5> :GundoToggle<CR>
 " VOoM {{{
 let g:voom_ft_modes=
   \ {
-    \ 'tex': 'latex', 'mediawiki': 'wiki', 'rst': 'rest', 'html': 'html'
+    \ 'tex': 'latex', 'mediawiki': 'wiki', 'rst': 'rest',
+    \ 'html': 'html', 'mkd.markdown': 'pandoc'
   \ }
 nnoremap <silent> <F6> :VoomToggle<CR>
 " }}}
