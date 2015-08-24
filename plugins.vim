@@ -14,6 +14,7 @@ call plug#begin('~/.vim/plugged')
 " Plugins
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'Shougo/unite.vim'
+Plug 'Shougo/neossh.vim'
 Plug 'osyo-manga/unite-quickfix'
 Plug 'Shougo/neocomplete.vim'
 Plug 'osyo-manga/vim-reunions', { 'for': ['c', 'cpp'] }
