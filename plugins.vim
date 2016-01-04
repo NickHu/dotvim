@@ -16,19 +16,26 @@ Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/neossh.vim'
 Plug 'osyo-manga/unite-quickfix'
-Plug 'Shougo/neocomplete.vim'
+if has("nvim")
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'euclio/vim-markdown-composer', { 'for': 'markdown.mkd.pandoc' }
+else
+  Plug 'Shougo/neocomplete.vim'
+  Plug 'gregsexton/VimCalc', { 'on': 'Calc' }
+endif
 Plug 'osyo-manga/vim-reunions', { 'for': ['c', 'cpp'] }
 Plug 'osyo-manga/vim-marching', { 'for': ['c', 'cpp'] }
+Plug 'Shougo/echodoc.vim'
+Plug 'Shougo/neopairs.vim'
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
+Plug 'Shougo/neoinclude.vim'
 Plug 'Shougo/context_filetype.vim'
 Plug 'Shougo/vimshell.vim', { 'on': 'VimShell' }
-Plug 'gregsexton/VimCalc', { 'on': 'Calc' }
 Plug 'honza/vim-snippets'
 Plug 'Shougo/vimfiler.vim'
 Plug 'bling/vim-airline'
 Plug 'Lokaltog/vim-easymotion'
-" Plug 'Raimondi/delimitMate'
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-sensible'
@@ -49,18 +56,20 @@ Plug 'jpalardy/vim-slime', { 'on': ['SlimeConfig', 'SlimeSend'] }
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'vim-perl/vim-perl', { 'for': 'perl' }
 Plug 'wting/rust.vim', { 'for': 'rust' }
-Plug 'eagletmt/ghcmod-vim', { 'for': 'haskell' }
-Plug 'eagletmt/neco-ghc', { 'for': 'haskell' }
-Plug 'bitc/lushtags', { 'for': 'haskell' }
-Plug 'Twinside/vim-haskellFold', { 'for': 'haskell' }
-Plug 'Twinside/vim-hoogle', { 'for': 'haskell' }
-Plug 'haskell.vim', { 'for': 'haskell' }
+Plug 'eagletmt/ghcmod-vim', { 'for': ['haskell', 'lhaskell'] }
+Plug 'eagletmt/neco-ghc', { 'for': ['haskell', 'lhaskell'] }
+Plug 'bitc/lushtags', { 'for': ['haskell', 'lhaskell'] }
+Plug 'Twinside/vim-haskellFold', { 'for': ['haskell', 'lhaskell'] }
+Plug 'Twinside/vim-hoogle', { 'for': ['haskell', 'lhaskell'] }
+Plug 'neovimhaskell/haskell-vim', { 'for': ['haskell', 'lhaskell'] }
 Plug 'mrtazz/simplenote.vim', { 'on': 'Simplenote' }
-Plug 'plasticboy/vim-markdown', { 'for': 'mkd.markdown' }
-Plug 'suan/vim-instant-markdown', { 'for': 'mkd.markdown' }
+Plug 'plasticboy/vim-markdown', { 'for': 'markdown.mkd.pandoc' }
+Plug 'vim-pandoc/vim-pandoc', { 'for': 'markdown.mkd.pandoc' }
+Plug 'vim-pandoc/vim-pandoc-syntax', { 'for': 'markdown.mkd.pandoc' }
 Plug 'zhaocai/GoldenView.Vim'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'myusuf3/numbers.vim'
+Plug 'Konfekt/FastFold'
 Plug 'kshenoy/vim-signature'
 Plug 'mhinz/vim-signify'
 Plug 'mhinz/vim-startify'

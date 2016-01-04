@@ -22,3 +22,8 @@ ln -s ~/.vim/bundle/powerline/font/10-powerline-symbols.conf ~/.config/fontconfi
 mkdir ~/.config
 ln -s ~/.vim/bundle/powerline/powerline/config_files ~/.config/powerline
 ```
+## NeoVim
+
+```  bash
+ln -s ~/.vim ~/.config/nvim
+```

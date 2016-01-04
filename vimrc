@@ -28,6 +28,7 @@ set tabstop=2
 
 " 80 column rule {{{
 set colorcolumn=80
+set textwidth=80
 " }}}
 
 " Enable opening new buffers without needing to save existing changes {{{
@@ -70,10 +71,6 @@ set number
 
 " Spell checking {{{
 set spell! spelllang=en_gb
-" }}}
-
-" Always show mode {{{
-set showmode
 " }}}
 
 " Fold markers by default {{{
@@ -139,49 +136,71 @@ nnoremap <silent> <leader>y :Unite history/yank<CR>
 let g:unite_force_overwrite_statusline = 0
 " }}}
 
-" NeoComplete {{{
-let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#enable_smart_case = 1
-let g:neocomplete#sources#syntax#min_keyword_length = 3
-let g:neocomplcache_min_syntax_length = 1
-let g:neocomplete#use_vimproc=1
-
-" Plugin key-mappings.
-inoremap <expr><C-g>     neocomplete#undo_completion()
-inoremap <expr><C-l>     neocomplete#complete_common_string()
-
-" Recommended key-mappings.
-" <CR>: close popup and save indent.
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function()
-  return pumvisible() ? neocomplete#close_popup() : "\<CR>"
-endfunction
-" <C-h>, <BS>: close popup and delete backword char.
-inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <expr><C-y>  neocomplete#close_popup()
-inoremap <expr><C-e>  neocomplete#cancel_popup()
-" Close popup by <Space>.
-"inoremap <expr><Space> pumvisible() ? neocomplete#close_popup() : "\<Space>"
-
-" For smart TAB completion.
-imap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)"
-      \: pumvisible() ? "\<C-n>"
-      \: <SID>check_back_space() ? "\<TAB>"
-      \: neocomplete#start_manual_complete()
-  function! s:check_back_space() "{{{
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~ '\s'
-  endfunction "}}}
-
-if !exists('g:neocomplete#force_omni_input_patterns')
-  let g:neocomplete#force_omni_input_patterns = {}
+" Quiet autocompletion {{{
+if has("patch-7.4.314")
+  set shortmess+=c
 endif
-let g:neocomplete#force_omni_input_patterns.c =
-\ '[^.[:digit:] *\t]\%(\.\|->\)\%(\h\w*\)\?'
-let g:neocomplete#force_omni_input_patterns.cpp =
-\ '[^.[:digit:] *\t]\%(\.\|->\)\%(\h\w*\)\?\|\h\w*::\%(\h\w*\)\?'
 " }}}
+
+" EchoDoc {{{
+set noshowmode
+let g:echodoc_enable_at_startup = 1
+" }}}
+
+if has("nvim")
+  " Deoplete {{{
+  let g:deoplete#enable_at_startup = 1
+  let g:deoplete#enable_smart_case = 1
+
+  call deoplete#custom#set('_', 'converters',
+    \ ['converter_auto_paren',
+    \  'converter_auto_delimiter', 'remove_overlap'])
+  " }}}
+else
+  " NeoComplete {{{
+  let g:neocomplete#enable_at_startup = 1
+  let g:neocomplete#enable_smart_case = 1
+  let g:neocomplete#sources#syntax#min_keyword_length = 3
+  let g:neocomplcache_min_syntax_length = 1
+  let g:neocomplete#use_vimproc=1
+
+  " Plugin key-mappings.
+  inoremap <expr><C-g>     neocomplete#undo_completion()
+  inoremap <expr><C-l>     neocomplete#complete_common_string()
+
+  " Recommended key-mappings.
+  " <CR>: close popup and save indent.
+  inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+  function! s:my_cr_function()
+    return pumvisible() ? neocomplete#close_popup() : "\<CR>"
+  endfunction
+  " <C-h>, <BS>: close popup and delete backword char.
+  inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+  inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+  inoremap <expr><C-y>  neocomplete#close_popup()
+  inoremap <expr><C-e>  neocomplete#cancel_popup()
+  " Close popup by <Space>.
+  "inoremap <expr><Space> pumvisible() ? neocomplete#close_popup() : "\<Space>"
+
+  " For smart TAB completion.
+  imap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)"
+        \: pumvisible() ? "\<C-n>"
+        \: <SID>check_back_space() ? "\<TAB>"
+        \: neocomplete#start_manual_complete()
+    function! s:check_back_space() "{{{
+      let col = col('.') - 1
+      return !col || getline('.')[col - 1]  =~ '\s'
+    endfunction "}}}
+
+  if !exists('g:neocomplete#force_omni_input_patterns')
+    let g:neocomplete#force_omni_input_patterns = {}
+  endif
+  let g:neocomplete#force_omni_input_patterns.c =
+  \ '[^.[:digit:] *\t]\%(\.\|->\)\%(\h\w*\)\?'
+  let g:neocomplete#force_omni_input_patterns.cpp =
+  \ '[^.[:digit:] *\t]\%(\.\|->\)\%(\h\w*\)\?\|\h\w*::\%(\h\w*\)\?'
+  " }}}
+endif
 
 " Marching {{{
 let g:marching_clang_command = "clang"
@@ -201,6 +220,7 @@ imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 \ "\<Plug>(neosnippet_expand_or_jump)"
 \: "\<TAB>"
+let g:neosnippet#enable_completed_snippet = 1
 
 " For conceal markers.
 if has('conceal')
@@ -297,13 +317,13 @@ let g:SimplenoteFiletype="markdown"
 " Markdown {{{
 let g:vim_markdown_math=1
 let g:instant_markdown_autostart = 0
-fun! MyAddToFileType(ft)
+fun! PandocAddToFileType(ft)
   if index(split(&ft, '\.'), a:ft) == -1
-    let &ft .= '.'.a:ft
+    let &ft .= '.'.a:ft.'.pandoc'
   endif
 endfun
-au FileType markdown call MyAddToFileType('mkd')
-au FileType mkd      call MyAddToFileType('markdown')
+au FileType markdown call PandocAddToFileType('mkd')
+au FileType mkd      call PandocAddToFileType('markdown')
 " }}}
 
 " ghc-mod {{{
