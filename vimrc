@@ -145,6 +145,7 @@ endif
 " EchoDoc {{{
 set noshowmode
 let g:echodoc_enable_at_startup = 1
+set completeopt-=preview
 " }}}
 
 if has("nvim")
@@ -155,6 +156,11 @@ if has("nvim")
   call deoplete#custom#set('_', 'converters',
     \ ['converter_auto_paren',
     \  'converter_auto_delimiter', 'remove_overlap'])
+  " }}}
+
+  " deoplete-clang {{{
+  let g:deoplete#sources#clang#libclang_path = "/usr/lib/libclang.so"
+  let g:deoplete#sources#clang#clang_header = "/usr/lib/clang" 
   " }}}
 else
   " NeoComplete {{{
@@ -200,17 +206,17 @@ else
   let g:neocomplete#force_omni_input_patterns.cpp =
   \ '[^.[:digit:] *\t]\%(\.\|->\)\%(\h\w*\)\?\|\h\w*::\%(\h\w*\)\?'
   " }}}
+
+  " Marching {{{
+  let g:marching_clang_command = "clang"
+
+  let g:marching_include_paths = filter(
+    \ split(glob('/usr/include/c++/*'), '\n') +
+    \ split(glob('/usr/include/*/c++/*'), '\n') +
+    \ split(glob('/usr/include/*/'), '\n'),
+    \ 'isdirectory(v:val)')
+  "}}}
 endif
-
-" Marching {{{
-let g:marching_clang_command = "clang"
-
-let g:marching_include_paths = filter(
-  \ split(glob('/usr/include/c++/*'), '\n') +
-  \ split(glob('/usr/include/*/c++/*'), '\n') +
-  \ split(glob('/usr/include/*/'), '\n'),
-  \ 'isdirectory(v:val)')
-"}}}
 
 " NeoSnippet {{{
 " SuperTab like snippets behavior.
@@ -220,7 +226,7 @@ imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 \ "\<Plug>(neosnippet_expand_or_jump)"
 \: "\<TAB>"
-let g:neosnippet#enable_completed_snippet = 1
+" let g:neosnippet#enable_completed_snippet = 1
 
 " For conceal markers.
 if has('conceal')
@@ -330,15 +336,15 @@ au FileType mkd      call PandocAddToFileType('markdown')
 " Type Lookup
 map <silent> <leader>tw :GhcModTypeInsert<CR>
 let g:necoghc_enable_detailed_browse = 1
-let g:ghcmod_open_quickfix_function = 'GhcModQuickFix'
-function! GhcModQuickFix()
-  " for unite.vim and unite-quickfix
-  :Unite -no-empty quickfix
-endfunction
+" let g:ghcmod_open_quickfix_function = 'GhcModQuickFix'
+" function! GhcModQuickFix()
+"   " for unite.vim and unite-quickfix
+"   :Unite -no-empty quickfix
+" endfunction
 au FileType haskell nnoremap <buffer> <silent> <F1> :GhcModType<CR>
 au FileType haskell nnoremap <buffer> <silent> <F2> :GhcModTypeClear<CR>
 au FileType haskell nnoremap <buffer> <silent> <F3> :GhcModInfo<CR>
-au BufWritePost *.hs GhcModCheckAndLintAsync
+" au BufWritePost *.hs GhcModCheckAndLintAsync
 " }}}
 
 " haskell-mode {{{
@@ -352,7 +358,14 @@ au BufWritePost *.hs GhcModCheckAndLintAsync
 " }}}
 
 " pointfree {{{
-au BufEnter *.hs set formatprg=xargs\ pointfree
+au BufEnter *.hs set formatprg=pointfree\ --stdin
+" }}}
+
+" ensime {{{
+" let g:deoplete#omni#input_patterns = {}
+" let g:deoplete#omni#input_patterns.scala = '[^. *\t]\.\w*\|: [A-Z]\w*'
+let g:deoplete#omni_patterns={}
+let g:deoplete#omni_patterns.scala= '[^. *\t]\.\w*\|: [A-Z]\w*'
 " }}}
 
 " slime {{{
@@ -377,6 +390,10 @@ nmap <silent> <leader>j <Plug>GoldenViewNext
 nmap <silent> <leader>k <Plug>GoldenViewPrevious
 " }}}
 
+" Rainbow parentheses {{{
+let g:rainbow_active = 1
+" }}}
+
 " Fugitive {{{
 autocmd User fugitive
   \ if fugitive#buffer().type() =~# '^\%(tree\|blob\)$' |
@@ -385,19 +402,44 @@ autocmd User fugitive
 autocmd BufReadPost fugitive://* set bufhidden=delete
 " }}}
 
-" Syntastic {{{
-let g:syntastic_error_symbol='✗'
-let g:syntastic_style_error_symbol='S✗'
-let g:syntastic_warning_symbol='⚠'
-let g:syntastic_style_warning_symbol='S⚠'
-map <silent> <Leader>e :Errors<CR>
-map <Leader>s :SyntasticToggleMode<CR>
-let g:syntastic_auto_loc_list=0
-" }}}
+if has("nvim")
+  " Neomake {{{
+  let g:auto_make = 0
+  function! AutoMakeToggle()
+    if g:auto_make >= 1
+      let g:auto_make = 0
+      autocmd! Neomake BufWritePost *
+    else
+      let g:auto_make = 1
+      augroup Neomake
+      autocmd! BufWritePost * Neomake
+      augroup END
+    endif
+  endfunction
+  call AutoMakeToggle()
+  command! AutoMakeToggle :call AutoMakeToggle()
+  let g:neomake_open_list = 2
+  " }}}
+else
+  " Syntastic {{{
+  let g:syntastic_error_symbol='✗'
+  let g:syntastic_style_error_symbol='S✗'
+  let g:syntastic_warning_symbol='⚠'
+  let g:syntastic_style_warning_symbol='S⚠'
+  map <silent> <Leader>e :Errors<CR>
+  map <Leader>s :SyntasticToggleMode<CR>
+  let g:syntastic_auto_loc_list=0
+  " }}}
+endif
 
 " Airline {{{
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
+" }}}
+
+" {{{ AutoSave
+let g:auto_save = 0
+let g:auto_save_in_insert_mode = 0
 " }}}
 
 " Solarized Dark {{{

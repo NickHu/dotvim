@@ -7,7 +7,5 @@ setlocal textwidth=79
 setlocal fo-=ro fo+=cql
 
 " Completion
-let g:marching_enable_neocomplete = 1
-let g:marching_clang_command_option="-std=c11"
-imap <buffer> <C-x><C-o> <Plug>(marching_start_omni_complete)
-imap <buffer> <C-x><C-x><C-o> <Plug>(marching_force_start_omni_complete)
+" let g:marching_enable_neocomplete = 1
+" let g:marching_clang_command_option="-std=c11"
