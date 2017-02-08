@@ -29,6 +29,7 @@ endif
 Plug '907th/vim-auto-save'
 Plug 'altercation/vim-colors-solarized'
 Plug 'bitc/lushtags', { 'for': ['haskell', 'lhaskell'] }
+Plug 'blindFS/vim-taskwarrior'
 Plug 'bufkill.vim'
 Plug 'chikamichi/mediawiki.vim', { 'for': 'mediawiki' }
 Plug 'chrisbra/Colorizer'
@@ -44,6 +45,7 @@ Plug 'godlygeek/tabular', { 'on': 'Tabularize' }
 Plug 'honza/vim-snippets'
 Plug 'idris-hackers/idris-vim', { 'for': 'idris' }
 Plug 'IndexedSearch'
+Plug 'jceb/vim-orgmode'
 Plug 'jpalardy/vim-slime', { 'on': ['SlimeConfig', 'SlimeSend'] }
 Plug 'kana/vim-textobj-indent'
 Plug 'kana/vim-textobj-user'
@@ -54,9 +56,10 @@ Plug 'Lokaltog/vim-easymotion'
 Plug 'luochen1990/rainbow'
 Plug 'majutsushi/tagbar'
 Plug 'matchit.zip'
+Plug 'mattn/calendar-vim'
 Plug 'mhinz/vim-signify'
 Plug 'mhinz/vim-startify'
-Plug 'mrtazz/simplenote.vim', { 'on': 'Simplenote' }
+Plug 'mrtazz/simplenote.vim', { 'on': ['Simplenote', 'SimplenoteList'] }
 Plug 'myusuf3/numbers.vim'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'neovimhaskell/haskell-vim', { 'for': ['haskell', 'lhaskell'] }
@@ -76,6 +79,7 @@ Plug 'sjl/gundo.vim', { 'on': 'GundoToggle' }
 Plug 'sudo.vim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-speeddating'
@@ -83,6 +87,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'Twinside/vim-haskellFold', { 'for': ['haskell', 'lhaskell'] }
 Plug 'Twinside/vim-hoogle', { 'for': ['haskell', 'lhaskell'] }
+Plug 'utl.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-pandoc/vim-pandoc', { 'for': 'markdown.mkd.pandoc' }
@@ -90,7 +95,7 @@ Plug 'vim-pandoc/vim-pandoc-syntax', { 'for': 'markdown.mkd.pandoc' }
 Plug 'vim-perl/vim-perl', { 'for': 'perl' }
 Plug 'VOoM', { 'on': 'VoomToggle' }
 Plug 'wting/rust.vim', { 'for': 'rust' }
-Plug 'zhaocai/GoldenView.Vim'
+" Plug 'zhaocai/GoldenView.Vim'
 
 " Filetype detection, using filetype plugin files, using indent files
 filetype plugin indent on

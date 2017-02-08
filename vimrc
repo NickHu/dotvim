@@ -65,6 +65,10 @@ let g:LatexBox_build_dir="build"
 let g:LatexBox_Folding=1
 " }}}
 
+" vimtex {{{
+let g:vimtex_latexmk_options="-pdf -verbose -file-line-error -synctex=1 -interaction=nonstopmode -lualatex"
+" }}}
+
 " Show line number gutter {{{
 set number
 " }}}
@@ -246,10 +250,10 @@ nnoremap <silent> <F5> :GundoToggle<CR>
 " VOoM {{{
 let g:voom_ft_modes=
   \ {
-    \ 'tex': 'latex', 'mediawiki': 'wiki', 'rst': 'rest',
-    \ 'html': 'html', 'mkd.markdown': 'pandoc'
+    \ 'tex': 'latex', 'mediawiki': 'wiki', 'rst': 'rest', 'org': 'org',
+    \ 'html': 'html', 'mkd.markdown': 'pandoc', 'markdown.mkd.pandoc': 'pandoc'
   \ }
-nnoremap <silent> <F6> :VoomToggle<CR>
+nnoremap <silent> <F7> :VoomToggle<CR>
 " }}}
 
 " VimFiler {{{
@@ -266,7 +270,7 @@ let g:vimfiler_tree_closed_icon = '▸'
 let g:vimfiler_file_icon = '-'
 let g:vimfiler_marked_file_icon = '*'
 
-nnoremap <silent> <F7> :VimFilerExplorer<CR>
+nnoremap <silent> <F6> :VimFilerExplorer<CR>
 " }}}
 
 " Tagbar {{{
@@ -305,7 +309,7 @@ let g:tagbar_type_haskell = {
 " }}}
 
 " simplenote.vim {{{
-noremap <silent> <F9> :Simplenote -l<cr>
+noremap <silent> <F9> :SimplenoteList<cr>
 let g:SimplenoteUsername="me@nickhu.co.uk"
 if exists("simplenotepassword")
   let g:SimplenotePassword=simplenotepassword
@@ -330,6 +334,10 @@ fun! PandocAddToFileType(ft)
 endfun
 au FileType markdown call PandocAddToFileType('mkd')
 au FileType mkd      call PandocAddToFileType('markdown')
+let g:pandoc#formatting#mode="hA"
+let g:pandoc#formatting#smart_autoformat_on_cursormoved=1
+let g:pandoc#command#latex_engine="lualatex"
+let g:markdown_composer_autostart=0
 " }}}
 
 " ghc-mod {{{
@@ -362,10 +370,8 @@ au BufEnter *.hs set formatprg=pointfree\ --stdin
 " }}}
 
 " ensime {{{
-" let g:deoplete#omni#input_patterns = {}
-" let g:deoplete#omni#input_patterns.scala = '[^. *\t]\.\w*\|: [A-Z]\w*'
-let g:deoplete#omni_patterns={}
-let g:deoplete#omni_patterns.scala= '[^. *\t]\.\w*\|: [A-Z]\w*'
+let g:deoplete#omni#input_patterns={}
+let g:deoplete#omni#input_patterns.scala= '[^. *\t]\.\w*\|: [A-Z]\w*'
 " }}}
 
 " slime {{{
@@ -381,13 +387,26 @@ nnoremap <silent> <leader>0 :NumbersToggle<CR>
 " }}}
 
 " Golden view {{{
-let g:goldenview__enable_default_mapping=0
+" let g:goldenview__enable_default_mapping=0
 
-nmap <silent> <leader>n <Plug>GoldenViewSplit
-nmap <silent> <leader><CR> <Plug>GoldenViewSwitchMain
-nmap <silent> <leader><BS> <Plug>GoldenViewSwitchToggle
-nmap <silent> <leader>j <Plug>GoldenViewNext
-nmap <silent> <leader>k <Plug>GoldenViewPrevious
+" nmap <silent> <leader>n <Plug>GoldenViewSplit
+" nmap <silent> <leader><CR> <Plug>GoldenViewSwitchMain
+" nmap <silent> <leader><BS> <Plug>GoldenViewSwitchToggle
+" nmap <silent> <leader>j <Plug>GoldenViewNext
+" nmap <silent> <leader>k <Plug>GoldenViewPrevious
+" }}}
+
+" Resizing {{{
+" set winheight=30
+" set winminheight=5
+nnoremap <silent> <Up> :res +5<CR>
+nnoremap <silent> <Down> :res -5<CR>
+nnoremap <silent> <Right> :vertical res +5<CR>
+nnoremap <silent> <Left> :vertical res -5<CR>
+" nnoremap <silent> <Up> :exe "resize " . (winheight(0) * 3/2)<CR>
+" nnoremap <silent> <Down> :exe "resize " . (winheight(0) * 2/3)<CR>
+" nnoremap <silent> <Right> :exe "vertical resize " . (winwidth(0) * 3/2)<CR>
+" nnoremap <silent> <Left> :exe "vertical resize " . (winwidth(0) * 2/3)<CR>
 " }}}
 
 " Rainbow parentheses {{{
@@ -440,6 +459,28 @@ let g:airline_powerline_fonts = 1
 " {{{ AutoSave
 let g:auto_save = 0
 let g:auto_save_in_insert_mode = 0
+" }}}
+
+" {{{ OrgMode
+let g:org_agenda_files = ['~/Dropbox/org/*.org']
+let g:org_indent = 1
+" }}}
+
+" {{{ NeoTerm
+" Useful maps
+" hide/close terminal
+nnoremap <silent> ,th :call neoterm#close()<cr>
+" clear terminal
+nnoremap <silent> ,tl :call neoterm#clear()<cr>
+" kills the current job (send a <c-c>)
+nnoremap <silent> ,tc :call neoterm#kill()<cr>
+noremap <silent> <F10> :Ttoggle<cr>
+tnoremap <silent> <Esc> <C-\><C-n>
+tnoremap <silent> <C-h> <C-\><C-n>:TmuxNavigateLeft<cr>
+tnoremap <silent> <C-j> <C-\><C-n>:TmuxNavigateDown<cr>
+tnoremap <silent> <C-k> <C-\><C-n>:TmuxNavigateUp<cr>
+tnoremap <silent> <C-l> <C-\><C-n>:TmuxNavigateRight<cr>
+nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
 " }}}
 
 " Solarized Dark {{{
