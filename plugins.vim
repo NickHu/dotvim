@@ -36,7 +36,7 @@ Plug 'chrisbra/Colorizer'
 Plug 'chrisbra/Recover.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ConradIrwin/vim-bracketed-paste'
-Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
+Plug 'derekwyatt/vim-scala', { 'for': ['scala', 'markdown.mkd.pandoc'] }
 Plug 'DrawIt'
 Plug 'eagletmt/ghcmod-vim', { 'for': ['haskell', 'lhaskell'] }
 Plug 'eagletmt/neco-ghc', { 'for': ['haskell', 'lhaskell'] }
@@ -52,6 +52,7 @@ Plug 'kana/vim-textobj-user'
 Plug 'Konfekt/FastFold'
 Plug 'kshenoy/vim-signature'
 Plug 'lervag/vimtex', { 'for': 'tex' } 
+Plug 'LnL7/vim-nix', { 'for': 'nix' }
 Plug 'Lokaltog/vim-easymotion'
 Plug 'luochen1990/rainbow'
 Plug 'majutsushi/tagbar'

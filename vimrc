@@ -1,5 +1,6 @@
 " Use unicode {{{
 set encoding=utf-8
+" set t_Co=256
 " }}}
 
 " Initialisation {{{
@@ -325,6 +326,14 @@ let g:SimplenoteFiletype="markdown"
 " }}}
 
 " Markdown {{{
+" let g:vim_markdown_fenced_languages = ['scala']
+let g:pandoc#syntax#codeblocks#embeds#langs = [
+      \"ruby",
+      \"scala",
+      \"ocaml",
+      \"literatehaskell=lhaskell",
+      \"bash=sh"
+      \]
 let g:vim_markdown_math=1
 let g:instant_markdown_autostart = 0
 fun! PandocAddToFileType(ft)
@@ -464,6 +473,7 @@ let g:auto_save_in_insert_mode = 0
 " {{{ OrgMode
 let g:org_agenda_files = ['~/Dropbox/org/*.org']
 let g:org_indent = 1
+let g:org_todo_keywords=['TODO', 'NEXT', '|', 'WAIT', 'DONE']
 " }}}
 
 " {{{ NeoTerm
